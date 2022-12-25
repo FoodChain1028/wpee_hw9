@@ -11,12 +11,15 @@ const __dirname = path.resolve();
 
 // init middleware
 app.use(cors());
-app.use('/api', routes);
-app.use(express.static(path.join(__dirname, "../frontend", "build")));
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
-});
+app.use(express.json())
+if (process.env.PORT === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend", "build")));
+  app.get("/*", function (req, res) {
+    res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
+  });
+}
 
+app.use('/api', routes);
 //connect db
 db.connect();
 
