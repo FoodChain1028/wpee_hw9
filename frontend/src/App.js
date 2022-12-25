@@ -1,5 +1,5 @@
-import Header from './Header.js';
-import Body from './Body.js';
+import Header from './Containers/Header.js';
+import Body from './Containers/Body.js';
 import styled from 'styled-components';
 import Paper from '@material-ui/core/Paper';
 
