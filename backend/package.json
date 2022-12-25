@@ -21,6 +21,6 @@
   },
   "scripts": {
     "server": "nodemon server.js --ext js --exec babel-node",
-    "deploy": "NODE_ENV=production MONGO_URL=mongodb+srv://fc:1@cluster0.5yfqxny.mongodb.net/?retryWrites=true&w=majority babel-node server.js"
+    "deploy": "NODE_ENV=production MONGO_URL=mongodb+srv://fc:1@cluster0.5yfqxny.mongodb.net/?retryWrites=true&w=majority PORT=4001 babel-node server.js"
   }
 }
