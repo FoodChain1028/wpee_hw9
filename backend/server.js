@@ -10,7 +10,7 @@ const port = process.env.PORT || 4001;
 app.use(cors());
 app.use(express.json());
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
   console.log(res)
   res.send('Hello, World!').status(200);
 });
@@ -21,5 +21,4 @@ app.listen(port, () =>
 
 //connect db
 db.connect();
-
-app.use('/api', routes);
+app.use('/', routes);
