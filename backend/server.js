@@ -7,10 +7,7 @@ const app = express();
 const port = process.env.PORT || 4001;
 
 // init middleware
-if (process.env.NODE_ENV === "development") {
-  app.use(cors());
-}
-
+app.use(cors());
 app.use(express.json());
 
 app.get('/api', (req, res) => {
@@ -25,4 +22,4 @@ app.listen(port, () =>
 //connect db
 db.connect();
 
-app.use('/', routes);
+app.use('/api', routes);
