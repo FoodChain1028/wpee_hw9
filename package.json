@@ -1,26 +1,18 @@
 {
-  "name": "hw8",
+  "name": "hw6",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^6.8.0",
-    "nodemon": "^2.0.20",
-    "ws": "^8.11.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.19.3",
-    "@babel/core": "^7.20.5",
-    "@babel/node": "^7.20.5",
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/plugin-proposal-object-rest-spread": "^7.20.2",
-    "@babel/plugin-transform-arrow-functions": "^7.18.6",
-    "@babel/preset-env": "^7.20.2",
-    "dotenv-defaults": "^5.0.2"
-  },
   "scripts": {
+    "install:all": "cd frontend && yarn install && cd ../backend && yarn install",
     "start": "cd frontend && yarn start",
-    "server": "cd backend && yarn server"
+    "server": "cd backend && yarn server",
+    "install:prod": "cd frontend && yarn install --freeze-lockfile && cd ../backend && yarn install --freeze-lockfile",
+    "build": "cd frontend && yarn build",
+    "deploy": "cd backend && yarn deploy"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "dotenv-defaults": "^5.0.2"
   }
 }
